@@ -29,7 +29,7 @@ ul {
   top: 0;
   background: rgba(10, 10, 35, 0.95);
   z-index: 1000;
-  padding: 15px 50px;
+  padding: 8px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -271,6 +271,7 @@ ul {
 
 .card-grid {
   display: grid;
+  padding: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
@@ -278,8 +279,8 @@ ul {
 /* Card Styles */
 .card, .tech-card {
   background: #1a1a2e;
-  padding: 20px;
-  border-radius: 10px;
+
+  border-radius: 5px;
   text-align: center;
   transition: 0.3s;
 }
@@ -287,8 +288,13 @@ ul {
 .card:hover, .tech-card:hover {
   background: #292949;
 }
-
-.card img, .tech-card img {
+.card img{
+  width: 100px;
+  height: 100px;
+  
+  margin-bottom: 10px;
+}
+.tech-card img {
   width: 80px;
   height: 80px;
   object-fit: contain;
@@ -316,7 +322,7 @@ ul {
 }
 
 .btn:hover {
-  background: #a060e2;
+  background:transparent;;
 }
 
 .btn-outline {
@@ -438,5 +444,306 @@ ul {
   .timeline-item::after {
     left: 0px;
   }
+}
+.contact-section {
+  padding: 100px 50px;
+  background: #0a0a23;
+  color: #fff;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-title {
+  font-size: 2.8em;
+  margin-bottom: 15px;
+  color: #b47afc;
+}
+
+.contact-tagline {
+  color: #aaa;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.chat-bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.bubble {
+  max-width: 350px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 0.95em;
+  line-height: 1.5;
+  position: relative;
+  animation: fadeInUp 0.8s ease;
+}
+
+.bubble.user {
+  background: #1a1a2e;
+  align-self: flex-start;
+}
+
+.bubble.ai {
+  background: #292949;
+  align-self: flex-end;
+  border: 1px solid #b47afc;
+}
+
+.contact-socials a {
+  font-size: 1.6em;
+  color: #b47afc;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+.contact-socials a:hover {
+  color: #fff;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form {
+  background: #1a1a2e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(180, 122, 252, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #121230;
+  color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #b47afc;
+}
+
+.btn-submit {
+  background: #b47afc;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #9d5bf5;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .chat-bubbles {
+    align-items: center;
+  }
+
+  .bubble {
+    max-width: 90%;
+  }
+}
+.education-section {
+  padding: 80px 50px;
+  background: #121230;
+  color: #fff;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.edu-card {
+  background: #1a1a2e;
+  padding: 30px;
+  border-left: 4px solid #b47afc;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(180, 122, 252, 0.1);
+  position: relative;
+  animation: fadeInUp 0.8s ease;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  background: #b47afc;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.edu-content h3 {
+  color: #b47afc;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+}
+
+.edu-meta {
+  font-size: 1.1em;
+  color: #ccc;
+}
+
+.edu-duration {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.edu-content p {
+  margin: 5px 0;
+  color: #ddd;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education-timeline {
+    padding: 0 15px;
+  }
+}
+.project-card {
+  margin-left: 50px;
+  position: relative;
+  width: 300px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  object-fit:contain;
+  display: block;
+  transition: transform 0.5s ease
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(10, 10, 30, 0.85);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.project-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h3 {
+  color: #b47afc;
+  margin-bottom: 10px;
+}
+
+.card-overlay p {
+  font-size: 0.95em;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card-buttons .btn {
+  background: #b47afc;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card-buttons .btn:hover {
+  background: #9c5df1;
+}
+
+.card-buttons .btn-outline {
+  background: transparent;
+  border: 1.5px solid #b47afc;
 }
 
