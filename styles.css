@@ -270,16 +270,17 @@ ul {
 }
 
 .card-grid {
-  display: grid;
-  padding: 10px 10px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* space between cards */
+  justify-content: center; /* center the cards horizontally */
+  align-items: flex-start; /* align cards to top */
+  padding: 20px 0;
 }
 
 /* Card Styles */
 .card, .tech-card {
   background: #1a1a2e;
-
   border-radius: 5px;
   text-align: center;
   transition: 0.3s;
@@ -322,7 +323,7 @@ ul {
 }
 
 .btn:hover {
-  background:transparent;;
+  background:#9c5df1;
 }
 
 .btn-outline {
@@ -665,85 +666,75 @@ ul {
   }
 }
 .project-card {
-  margin-left: 50px;
-  position: relative;
-  width: 300px;
-  height: 250px;
-  border-radius: 12px;
+  width: 320px;
+  min-height: 500px;
+  background-color: #292949;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
 }
 
-.card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.project-image img {
   width: 100%;
-  height: 80%;
-  object-fit:contain;
-  display: block;
-  transition: transform 0.5s ease
+  height: 200px;
+  object-fit: cover;
 }
 
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(10, 10, 30, 0.85);
-  color: #fff;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.project-content {
+  margin-top: 10px;
   text-align: center;
+  flex-grow: 1; 
 }
 
-.project-card:hover .card-overlay {
-  opacity: 1;
-}
-
-.card-overlay h3 {
+.project-content h3 {
   color: #b47afc;
   margin-bottom: 10px;
 }
 
-.card-overlay p {
-  font-size: 0.95em;
-  color: #ddd;
+.project-content p {
+  font-size: 0.95rem;
+  color: #c5c5c7;
   margin-bottom: 20px;
 }
 
-.card-buttons {
+.project-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-bottom: auto;
 }
 
-.card-buttons .btn {
-  background: #b47afc;
+.project-buttons .btn {
+  padding: 10px 16px;
+  background-color: #b47afc;
   color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-decoration: none;
+  border-radius: 8px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
 }
 
-.card-buttons .btn:hover {
+.project-buttons .btn:hover {
   background: #9c5df1;
 }
 
-.card-buttons .btn-outline {
+.btn-outline {
   background: transparent;
   border: 1.5px solid #b47afc;
 }
-
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
